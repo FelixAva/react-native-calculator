@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { globalStyles } from '../../config/app-theme';
 
 const CalculatorScreen = () => {
@@ -9,6 +9,13 @@ const CalculatorScreen = () => {
         <Text style={ globalStyles.mainResult }>1500</Text>
         <Text style={ globalStyles.subResult }>15</Text>
       </View>
+
+      <View style={ globalStyles.row }>
+        <Pressable style={ globalStyles.button }>
+          <Text style={ globalStyles.buttonText }>0</Text>
+        </Pressable>
+      </View>
+
     </View>
   );
 };
