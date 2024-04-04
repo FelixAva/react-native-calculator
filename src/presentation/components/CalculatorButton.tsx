@@ -7,6 +7,7 @@ interface Props {
   color?: string;
   doubleSize?: boolean;
   blackText?: boolean;
+  onPress: () => void;
 }
 
 const CalculatorButton = ({
@@ -14,13 +15,16 @@ const CalculatorButton = ({
   color = colors.darkGray,
   doubleSize= false,
   blackText= false,
+  onPress,
 } : Props) => {
   return (
-    <Pressable style={ ({pressed}) => ({
-      ...globalStyles.button,
-      width: ( doubleSize ) ? 180 : 80,
-      backgroundColor: color,
-      opacity: ( pressed ) ? 0.8 : 1,
+    <Pressable
+      onPress={ () => onPress() }
+      style={ ({pressed}) => ({
+       ...globalStyles.button,
+        width: ( doubleSize ) ? 180 : 80,
+        backgroundColor: color,
+        opacity: ( pressed ) ? 0.8 : 1,
     }) }>
       <Text style={{
         ...globalStyles.buttonText,
